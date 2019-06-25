@@ -18,25 +18,36 @@ $( "#datepicker2" ).datepicker();
 		<?php echo form_open_multipart('index.php/web/proses_add_lelang') ?>
 				 <div class="register-top-grid"> 
 					<h3>Uploud Jaminan Bukti Penawar</h3> 
+					 
 					 <div> 
-						<span>Nomer Rekening<label>*</label></span> 
+						<span>Kode Barang<label>*</label></span> 
 						<input type="text" name="kode_barang"> 
 						<input type="hidden" name="id_pelelang" value="<?php echo $id_pelelang ?>"> 
 					 </div> 
-					 
+					 <div> 
+						<span>Nama Barang<label>*</label></span> 
+						<input type="text" name="nama_barang"> 
+					 </div> 
 				 
 					 <div> 
-						<span>Nama pemilim Rekning<label>*</label></span> 
+						<span>Harga Buka<label>*</label></span> 
+						<input type="text" name="harga_buka"> 
+					 </div>
+					 <div> 
+						<span>Lokasi<label>*</label></span> 
 						<input type="text" name="lokasi"> 
 					 </div>
 					 <div> 
-						<span>Tanggal Transfer<label>*</label></span> 
-						<input type="text" name="tanggal_buka" id="datepicker"> 
+						<span>Tanggal Buka<label>*</label></span> 
+						<input type="date" name="tanggal_buka"> 
+					 </div> 
+					 <div> 
+						<span>Tanggal Selesai<label>*</label></span> 
+						<input type="date" name="tanggal_selesai"> 
 					 </div> 
 					 
-					 
 					 <div> 
-						<span>Bukti Transfer<label>*</label></span> 
+						<span>Foto Barang<label>*</label></span> 
 						<input type="file" name="userfile"> 
 					 </div> 
 					 
