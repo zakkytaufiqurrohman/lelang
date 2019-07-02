@@ -99,41 +99,7 @@
 			  } ?>
 
 
-			  <div class="grid_2"> 
-			  <?php foreach ($data->result() as $row) {
-			  	?>
-			<div class="col-md-3 span_6"> 
-			  <div class="box_inner"> 
-<?php       
-							            $image = array(
-							              'src' => 'assets/foto_lelang/'.($row->foto),
-							              'class' => 'photo',
-							              'width' => '260',
-							              'height' => '180',
-									'class' => 'img-responsive',
-							              'rel' => 'lightbox',
-							            );
-							            echo img($image); ?>
-
-
-				
-
-				
-				 <div class="sale-box"> </div> 
-				 <div class="desc"> 
-				 	<h3><?php echo $row->nama_barang ?></h3> 
-				 	<h4><?php echo $row->harga_buka ?></h4> 
-				 	<ul class="list2"> 
-				 	  <li class="list2_right"><span class="m_2"><a href="index.php/web/detail_barang/<?php echo $row->id_barang_lelang ?>" class="link1">Lelang</a></span></li> 
-				 	  <div class="clearfix"> </div> 
-				 	</ul> 
-				 	<div class="heart"> </div> 
-				 </div> 
-			   </div> 
-
-			</div> 
-			   			  	<?php
-			  } ?>
+			  
 			
 			
 			<div class="clearfix"> </div> 

@@ -45,16 +45,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="container"> 
   	<div class="header_top-box"> 
      <div class="header-top-left"> 
-			  
    			 </div> 
 			 <div class="cssmenu"> 
 				<ul> 
-
-					
-					 
-
 					<li><a href="index.php/web/login"><li i class="fa fa-instagram"></i></a></li> 
-					
 				</ul> 
 			</div> 
 			<div class="clearfix"></div> 
@@ -63,7 +57,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div> 
 <?php $this->load->view('menu'); ?>
 <?php $this->load->view($content); ?>
-
 
 <div class="footer"> 
 	<div class="container"> 

@@ -8,6 +8,8 @@
 			</ul> 
 		</div> 
 		<div class="grid_2"> 
+
+		
 			  <?php foreach ($data->result() as $row) {
 			  	?>
 			<div class="col-md-3 span_6"> 

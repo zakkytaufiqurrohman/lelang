@@ -64,38 +64,35 @@ table, tr, th, td {
 				<td><?php echo $row->lokasi ; ?></td>
 				<td><?php echo $row->tanggal_selesai ; ?></td>
 				<td>
-					<?php if($row->status == 0){
-						?>
-						Tunda
-						<?php
-						}else{
-							?>
+					<?php if($row->status == 0) { ?>
+							Tunda
+					<?php	}
+						else{
+					?>
 							Terpilih
-							<?php
-							} ?>
+					<?php } ?>
 				</td>
 				<td>
-					<?php       
-							            $image = array(
-							              'src' => 'assets/foto_lelang/'.($row->foto),
-							              'class' => 'photo',
-							              'width' => '140',
-							              'height' => '80',
-							              'rel' => 'lightbox',
-							            );
-							            echo img($image); ?>
+				<!-- // -->
+				<?php       
+							$image = array(
+							        'src' => 'assets/foto_lelang/'.($row->foto),
+							        'class' => 'photo',
+							        'width' => '140',
+							        'height' => '80',
+							        'rel' => 'lightbox',
+							        );
+							        echo img($image); ?> 
+									<!-- // -->
 				</td>
-							<td>
-      						
-							
-							<a href="<?php echo base_url() ?>index.php/web_admin/hapus_barang/<?php echo $row->id_barang_lelang ; ?>" >
-								<button type="button" class="btn btn-danger btn-sm">
+				<td>
+						<a href="<?php echo base_url() ?>index.php/web_admin/hapus_barang/<?php echo $row->id_barang_lelang ; ?>" >
+							<button type="button" class="btn btn-danger btn-sm">
 									<span class="glyphicon glyphicon-trash"></span>Hapus
-								</button>
-							</a> 
-							</td>
+							</button>
+						</a> 
+				</td>
 						</tr>
-						
 						<?php } ?>
 						</tbody>
 						</table>

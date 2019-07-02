@@ -74,12 +74,11 @@ table, tr, th, td {
 							<?php
 							} ?>
 				</td>
-				
+							<!-- send data to controller web admin/konfirmasi -->
 							<td>
       						<a  href="<?php echo base_url() ?>index.php/web_admin/konfirmasi_pelelang/<?php echo $row->id_pelelang ; ?>" class="btn btn-success btn-small" 
       						>
       						&nbsp;Konfirmasi</a>
-							
 							<a href="<?php echo base_url() ?>index.php/web_admin/hapus_pelelang/<?php echo $row->id_pelelang ; ?>" >
 								<button type="button" class="btn btn-danger btn-sm">
 									</span>Hapus
@@ -101,4 +100,16 @@ function confirm_modal(delete_url)
 	$('#modal_delete').modal('show', {backdrop: 'static'});
 	document.getElementById('delete_link').setAttribute('href' , delete_url);
 }
+</script>
+
+<script>
+$(document).ready(function() {
+    var table = $('#example').DataTable( {
+        lengthChange: false,
+        buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+    } );
+ 
+    table.buttons().container()
+        .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
+} );
 </script>
