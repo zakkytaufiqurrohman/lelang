@@ -42,7 +42,30 @@ class Web_admin extends CI_Controller {
 		redirect('index.php/web_admin/data_pelelang');
 
 	}
-	
+	// 
+	public function edit_pelelang($id_pelelang){
+		$data['id_pelelang'] = $id_pelelang;
+		$data['data'] = $this->db->get_where('tbl_pelelang',$data);
+		// $data['content'] = 'edit_barang';
+		$this->load->view('web-admin/edit_pelelang',$data);
+	}
+	// 
+	public function proses_edit_lelang(){
+		$id  =  $this->input->post('id');
+		$no_hp  =  $this->input->post('no_hp');
+		$alamat  =  $this->input->post('alamat');
+		$nama_pelelang  =  $this->input->post('nama_pelelang');
+		
+                        $data = array('no_hp'       => $no_hp,
+                        			  'alamat'       => $alamat,
+                        			  'nama_pelelang'    	  => $nama_pelelang,
+                        			  
+                         );     
+                        	$this->db->where('id_pelelang',$id);
+                        	$this->db->update('tbl_pelelang',$data);
+                        	redirect('index.php/web_admin/data_pelelang');
+
+      }
 	public function data_kandidat(){
 		$data['data'] = $this->db->query("SELECT * FROM tbl_kandidat 
 											
@@ -50,8 +73,6 @@ class Web_admin extends CI_Controller {
 		$data['content']  = 'web-admin/data_kandidat';
 		$this->load->view('web-admin/index',$data);
 	}
-	
-	
  public function hapus_pelelang($id_pelelang){
 			$data['id_pelelang']	= $id_pelelang;
 			$sql			= $this->db->delete('tbl_pelelang',array('id_pelelang'=>$id_pelelang));

@@ -6,7 +6,6 @@ table, tr, th, td {
 		border: 1px solid #98BF21;
 		font-family: georgia;
 		width: 1100px;
-
 	}
 	th{
 		background-color:#A7C942;
@@ -38,7 +37,8 @@ table, tr, th, td {
 	    <div class="register"> 
 			   <div class="col-md-6 login-left"> 
 			  	 <h3>DETAIL PELELANG</h3> 
-				<table width="100%">
+				   <!-- <table id="example" class="table table-striped table-bordered" style="width:100%"> -->
+				<table id="example" class="table table-striped table-bordered" width="100%">
 			    <thead>
 			    <tr>
 			        <th >No</th>
@@ -79,6 +79,9 @@ table, tr, th, td {
       						<a  href="<?php echo base_url() ?>index.php/web_admin/konfirmasi_pelelang/<?php echo $row->id_pelelang ; ?>" class="btn btn-success btn-small" 
       						>
       						&nbsp;Konfirmasi</a>
+							  <!-- <a  href="<?php echo base_url() ?>index.php/web_admin/edit_pelelang/<?php echo $row->id_pelelang ; ?>" class="btn btn-success btn-small" 
+      						>
+      						&nbsp;edit</a> -->
 							<a href="<?php echo base_url() ?>index.php/web_admin/hapus_pelelang/<?php echo $row->id_pelelang ; ?>" >
 								<button type="button" class="btn btn-danger btn-sm">
 									</span>Hapus
@@ -105,11 +108,21 @@ function confirm_modal(delete_url)
 <script>
 $(document).ready(function() {
     var table = $('#example').DataTable( {
-        lengthChange: false,
+        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
         buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
     } );
  
     table.buttons().container()
         .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
-} );
+
+	
+
+});
+// $(document).ready(function() {
+//     $('#example').DataTable( {
+//         "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+//     } );
+// } );
+
+
 </script>
