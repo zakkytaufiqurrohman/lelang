@@ -39,7 +39,7 @@ table, tr, th, td {
 	    <div class="register"> 
 			   <div class="col-md-14 login-left"> 
 			  	 <h3>SEMUA BARANG YANG DI LELANG</h3> 
-				<table>
+				   <table id="example" class="table table-striped table-bordered" width="100%">
 			    <thead>
 			    <tr>
 			        <th >No</th>
@@ -108,4 +108,25 @@ function confirm_modal(delete_url)
 	$('#modal_delete').modal('show', {backdrop: 'static'});
 	document.getElementById('delete_link').setAttribute('href' , delete_url);
 }
+</script>
+<script>
+$(document).ready(function() {
+    var table = $('#example').DataTable( {
+        "lengthMenu": [[5, 25, 50, -1], [5, 25, 50, "All"]],
+        buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+    } );
+ 
+    table.buttons().container()
+        .appendTo( '#example_wrapper .col-sm-6:eq(0)' );
+
+	
+
+});
+// $(document).ready(function() {
+//     $('#example').DataTable( {
+//         "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+//     } );
+// } );
+
+
 </script>
